@@ -6,23 +6,28 @@ import {ReactComponent as PersonOutlineIcon} from '../assets/svg/personOutlineIc
 
 
 function Navbar() {
+ const navigate = useNavigate()
+ const location = useLocation()
+
+
+
   return (
     <footer className='navbar'>
       <nav className='navbarNav'>
         <ul className='navbarListItems'>
-          <li className='navbarListItem'>
+          <li className='navbarListItem' onClick={() => navigate('/')}>
             <ExploreIcon fill='#2c2c2c'
             width='36px'
             heigh='36px' />
             <p>Explore</p>
           </li>
-          <li className="navbarListItem">
+          <li className="navbarListItem" onClick={() => navigate('/offers')}>
             <OfferIcon fill='#2c2c2c'
             width='36px'
             heigh='36px' />
             <p>Offer</p>
           </li>
-          <li className="navbarListItem">
+          <li className="navbarListItem" onClick={() => navigate('/profile')}>
             <PersonOutlineIcon fill='#2c2c2c'
             width='36px'
             heigh='36px' />
