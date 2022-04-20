@@ -9,6 +9,11 @@ function Navbar() {
  const navigate = useNavigate()
  const location = useLocation()
 
+ const pathMatchRoute = (route) => {
+  if(route === location.pathname){
+    return true
+  }
+ }
 
 
   return (
@@ -16,22 +21,22 @@ function Navbar() {
       <nav className='navbarNav'>
         <ul className='navbarListItems'>
           <li className='navbarListItem' onClick={() => navigate('/')}>
-            <ExploreIcon fill='#2c2c2c'
+            <ExploreIcon fill={pathMatchRoute('/') ? '#2C2C2C' : '#8F8F8F'}
             width='36px'
             heigh='36px' />
-            <p>Explore</p>
+            <p className={pathMatchRoute('/') ? 'navbarListItemNameActive' : ''}>Explore</p>
           </li>
           <li className="navbarListItem" onClick={() => navigate('/offers')}>
-            <OfferIcon fill='#2c2c2c'
+            <OfferIcon fill={pathMatchRoute('/offers') ? '#2C2C2C' : '#8F8F8F'}
             width='36px'
             heigh='36px' />
-            <p>Offer</p>
+            <p className={pathMatchRoute('/offers') ? 'navbarListItemNameActive' : ''}>Offer</p>
           </li>
           <li className="navbarListItem" onClick={() => navigate('/profile')}>
-            <PersonOutlineIcon fill='#2c2c2c'
+            <PersonOutlineIcon fill={pathMatchRoute('/profile') ? '#2C2C2C' : '#8F8F8F'}
             width='36px'
             heigh='36px' />
-            <p>Profile</p>
+            <p className={pathMatchRoute('/profile') ? 'navbarListItemNameActive' : ''}>Profile</p>
           </li>
         </ul>
       </nav>
