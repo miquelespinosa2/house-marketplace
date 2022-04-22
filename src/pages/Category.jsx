@@ -47,7 +47,13 @@ function Category() {
     fetchListings()
   }, [])
   return (
-    <div>Category</div>
+    <div className='category'>
+      <header>
+        <p className="pageHeader">
+          {params.categoryName === 'rent' ? 'Places for rent' : 'Places for sale'}
+        </p>
+      </header>
+    </div>
   )
 }
 
