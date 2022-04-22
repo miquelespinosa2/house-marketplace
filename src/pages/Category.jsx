@@ -22,14 +22,30 @@ function Category() {
         // Create query
         const q = query(listingsRef, where('type', '==', params.categoryName),
         orderBy('timestamp', 'desc'),
-        limit(10))
-      } catch (error) {
+        limit(10)
+        )
 
+        // Execute query
+        const querySnap = await getDocs(q)
+
+        const listings = []
+
+        querySnap.forEach((doc) => {
+          return listings.push({
+            id: doc.id,
+            data: doc.data()
+          })
+        })
+
+        setListings(listings)
+        setLoading(false)
+      } catch (error) {
+        toast.error('Could not fetch listings')
       }
     }
 
     fetchListings()
-  })
+  }, [])
   return (
     <div>Category</div>
   )
