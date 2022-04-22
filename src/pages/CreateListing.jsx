@@ -8,6 +8,7 @@ import {useRef} from 'react'
 
 function CreateListing() {
   const [geolocationEnabled, setGeolocationEnabled] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     type: 'rent',
     name: '',
@@ -33,7 +34,9 @@ function CreateListing() {
     if(isMounted) {
       onAuthStateChanged(auth, (user) => {
         if(user) {
-          setFormData({...formData,userRef: user.uid})
+          setFormData({...formData, userRef: user.uid})
+        } else {
+          navigate('/sign-in')
         }
       })
     }
@@ -42,6 +45,12 @@ function CreateListing() {
       isMounted.current = false
     }
   }, [isMounted])
+
+
+  if(loading) {
+    return <Spinner />
+  }
+
   return (
     <div>Create</div>
   )
