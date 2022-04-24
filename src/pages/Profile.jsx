@@ -9,6 +9,8 @@ import {toast} from 'react-toastify'
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 import homeIcon from '../assets/svg/homeIcon.svg'
 
+
+// setting up the auth's for the user
 function Profile() {
   const auth = getAuth()
   const [changeDetails, setChangeDetails] = useState(false)
