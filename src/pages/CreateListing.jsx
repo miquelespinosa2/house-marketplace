@@ -31,7 +31,7 @@ function CreateListing() {
   // mounting for the memory leaks
   const isMounted = useRef(true)
 
-
+  // useEffect hook for the mounting (memory leak error)
   useEffect(() => {
     if(isMounted) {
       onAuthStateChanged(auth, (user) => {
