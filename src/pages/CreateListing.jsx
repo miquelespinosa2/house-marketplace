@@ -27,6 +27,8 @@ function CreateListing() {
 
   const auth = getAuth()
   const navigate = useNavigate()
+
+  // mounting for the memory leaks
   const isMounted = useRef(true)
 
 
@@ -47,6 +49,7 @@ function CreateListing() {
   }, [isMounted])
 
 
+  // when the webpage is loading (fetching), play the spinner gif
   if(loading) {
     return <Spinner />
   }
