@@ -21,6 +21,7 @@ function Profile() {
 
   const {name, email} = formData
 
+  // initiating navigate
   const navigate = useNavigate()
 
   const onLogout = () =>  {
