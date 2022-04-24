@@ -29,6 +29,8 @@ function Profile() {
     navigate('/')
   }
 
+  // asyn function that returns a promise to interact with the name
+  // on firebase's console
   const onSubmit = async () => {
     try {
       if (auth.currentUser.displayName !== name) {
