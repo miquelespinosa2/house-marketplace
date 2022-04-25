@@ -58,7 +58,14 @@ function CreateListing() {
   }
 
   const onMutate = (e) => {
+    let boolean = null
 
+    if(e.target.value === 'true') {
+      boolean = true
+    }
+    if(e.target.value === 'false') {
+      boolean = false
+    }
   }
 
 
