@@ -162,6 +162,15 @@ function CreateListing() {
             No
           </button>
         </div>
+        <label className="formLabel">Address</label>
+        <textarea
+          className='formInputAddress'
+          id="address"
+          type='text'
+          value={address}
+          onChange={onMutate}
+          required
+        />
       </main>
     </div>
   )
