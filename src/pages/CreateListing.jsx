@@ -194,6 +194,46 @@ function CreateListing() {
             </div>
           </div>
         )}
+
+        <label className='formLabel'>Offer</label>
+          <div className='formButtons'>
+            <button
+              className={offer ? 'formButtonActive' : 'formButton'}
+              type='button'
+              id='offer'
+              value={true}
+              onClick={onMutate}
+            >
+              Yes
+            </button>
+            <button
+              className={
+                !offer && offer !== null ? 'formButtonActive' : 'formButton'
+              }
+              type='button'
+              id='offer'
+              value={false}
+              onClick={onMutate}
+            >
+              No
+            </button>
+          </div>
+
+          <label className='formLabel'>Regular Price</label>
+          <div className='formPriceDiv'>
+            <input
+              className='formInputSmall'
+              type='number'
+              id='regularPrice'
+              value={regularPrice}
+              onChange={onMutate}
+              min='50'
+              max='750000000'
+              required
+            />
+            {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
+          </div>
+
       </main>
     </div>
   )
