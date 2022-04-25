@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import {getAuth, onAuthStateChanged} from 'firebase/auth'
+import {getStorage, ref, uploadBytesResumable, getDownloadURL} from 'firebase/storage'
 import {useLocation, useNavigate} from 'react-router-dom'
 import Spinner from '../components/Spinner'
 import {useRef} from 'react'
