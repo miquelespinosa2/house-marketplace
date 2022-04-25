@@ -94,6 +94,22 @@ function CreateListing() {
               Rent
             </button>
           </div>
+          <label className="formLabel">Name
+          <input type="text"
+          className='formInputName'
+          id='name'
+          value={name}
+          onChange={onMutate}
+          maxLength='32'
+          minLength='10'
+          required
+          />
+
+
+
+          </label>
+
+
         </form>
       </main>
     </div>
