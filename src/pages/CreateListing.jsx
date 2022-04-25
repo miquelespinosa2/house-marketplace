@@ -66,6 +66,23 @@ function CreateListing() {
     if(e.target.value === 'false') {
       boolean = false
     }
+
+    // Files
+    if(e.target.files) {
+      setFormData((prevState) => ({
+        ...prevState,
+        images: e.target.files
+      }))
+    }
+
+
+    // Text/Booleans/Number
+    if(!e.target.files) {
+      setFormData((prevState) => ({
+        ...prevState,
+        [e.target.id]: boolean ?? e.target.value,
+      }))
+    }
   }
 
 
