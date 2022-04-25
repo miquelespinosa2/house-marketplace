@@ -171,6 +171,29 @@ function CreateListing() {
           onChange={onMutate}
           required
         />
+
+        {!geolocationEnabled && (
+          <div className='formLatLng flex'>
+            <div>
+              <label className="formLabel">Latitude</label>
+              <input type="number"
+              className='formInputSmall'
+              id='latitude'
+              value={latitude}
+              onChange={onMutate}
+              required />
+            </div>
+            <div>
+              <label className="formLabel">Longitude</label>
+              <input type="number"
+              className='formInputSmall'
+              id='longitude'
+              value={longitude}
+              onChange={onMutate}
+              required />
+            </div>
+          </div>
+        )}
       </main>
     </div>
   )
