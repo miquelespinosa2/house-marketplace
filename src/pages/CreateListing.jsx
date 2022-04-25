@@ -24,6 +24,11 @@ function CreateListing() {
     longitude: 0,
   })
 
+  const {type, name, bedrooms, bathrooms, parking, furnished,
+  address, offer, regularPrice, discountedPrice, images,
+  latitude, longitude
+  } = formData
+
 
   const auth = getAuth()
   const navigate = useNavigate()
@@ -48,6 +53,14 @@ function CreateListing() {
     }
   }, [isMounted])
 
+  const onSubmit = (e) => {
+    e.preventDefault()
+  }
+
+  const onMutate = (e) => {
+
+  }
+
 
   // when the webpage is loading (fetching), play the spinner gif
   if(loading) {
@@ -55,7 +68,27 @@ function CreateListing() {
   }
 
   return (
-    <div>Create</div>
+    <div className='profile'>
+      <header>
+        <p className="pageHeader">Create a Listing</p>
+      </header>
+
+      <main>
+        <form onSubmit={onSubmit}>
+          <label className='formLabel'>Sell / Rent</label>
+          <div className="formButtons">
+            <button type='button' className={type === 'sale' ?
+            'formButtonActive' : 'formButton'}
+            id='type'
+            value='sale'
+            onClick={onMutate}
+            >
+              Sell
+            </button>
+          </div>
+        </form>
+      </main>
+    </div>
   )
 }
 
