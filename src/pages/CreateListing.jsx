@@ -105,7 +105,6 @@ function CreateListing() {
           required
           />
           </label>
-        </form>
 
         <div className="formRooms flex">
           <div>
@@ -250,6 +249,24 @@ function CreateListing() {
             </>
           )}
 
+        <label className='formLabel'>Images</label>
+          <p className='imagesInfo'>
+            The first image will be the cover (max 6).
+          </p>
+          <input
+            className='formInputFile'
+            type='file'
+            id='images'
+            onChange={onMutate}
+            max='6'
+            accept='.jpg,.png,.jpeg'
+            multiple
+            required
+          />
+          <button type='submit' className='primaryButton createListingButton'>
+            Create Listing
+          </button>
+        </form>
       </main>
     </div>
   )
