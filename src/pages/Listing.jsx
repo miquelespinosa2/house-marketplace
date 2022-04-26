@@ -86,6 +86,12 @@ return <main>
     </ul>
 
     <p className="listingLocationTitle">Location</p>
+
+    {auth.currentUser?.uid !== listing.userRef && (
+      <Link to={`/contact/${listing.userRef}?listingName=${listing.name}&listingLocation=${listing.location}`} className='primaryButton'>
+        Contact Landlord
+      </Link>
+    )}
   </div>
 </main>
 
