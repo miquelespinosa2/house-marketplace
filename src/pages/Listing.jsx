@@ -76,6 +76,11 @@ return <main>
       <li>
         {listing.bedrooms > 1 ? `${listing.bedrooms} Bedrooms` : '1 Bedroom'}
       </li>
+      <li>
+        {listing.bathrooms > 1
+        ? `${listing.bathrooms} Bathrooms` :
+        '1 Bathroom'}
+      </li>
     </ul>
   </div>
 </main>
