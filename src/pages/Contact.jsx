@@ -28,6 +28,8 @@ function Contact() {
 
   }, [params.landlordId])
 
+  const onChange = (e) => setMessage(e.target.value)
+
   return (
     <div className='pageContainer'>
       <header>
@@ -41,6 +43,18 @@ function Contact() {
           <div className="contactLandlord">
             <p className="landlordName">Contact {landlord?.name}</p>
           </div>
+
+        <form  className="messageform">
+          <div className="messageDiv">
+            <label htmlFor="message" className="messageLabel">
+              Message
+            </label>
+            <textarea name="message" id="messge" className='textarea'
+            value={message} onChange={onChange}>
+
+            </textarea>
+          </div>
+        </form>
         </main>
       )}
     </div>
