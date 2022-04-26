@@ -88,7 +88,7 @@ return <main>
     <p className="listingLocationTitle">Location</p>
 
     {auth.currentUser?.uid !== listing.userRef && (
-      <Link to={`/contact/${listing.userRef}?listingName=${listing.name}&listingLocation=${listing.location}`} className='primaryButton'>
+      <Link to={`/contact/${listing.userRef}?listingName=${listing.name}`} className='primaryButton'>
         Contact Landlord
       </Link>
     )}
