@@ -32,16 +32,43 @@ function Swiper() {
           data: doc.data()
         })
       })
-   
+
       setListings(listings)
       setLoading(false)
     }
 
     fetchListings()
   }, [])
-  return (
-    <div>Swiper</div>
+
+  if(loading) {
+    return <Spinner />
+  }
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
+  return listings && (
+    <>
+      <p className="exploreHeading">Recommended</p>
+
+      <Slider {...settings}>
+        {listings.map(({data, id}) => (
+          <div key={id}>
+            <img src={data.imgUrls[0]} alt="images" onClick={() => navigate(`/category/${data.type}/${id}`)} />
+            <p className="swiperSlideText">{data.name}</p>
+            <p className="swiperSlidePrice">${data.discountedPrice ?? data.regularPrice}{''}
+            {data.type === 'rent' && '/ month'}</p>
+          </div>
+        ))}
+      </Slider>
+    </>
   )
+
 }
 
 export default Swiper
