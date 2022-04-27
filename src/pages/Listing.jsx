@@ -50,8 +50,10 @@ function Listing() {
       <Slider {...settings}>
           {listing.imgUrls.map((url, index) => (
               <div key={index} >
-                <img src={listing.imgUrls[index]} className='center no-repeat'  alt='pictures'
-                 style={{backgroundSize: 'cover', width:'100%', height: '100%'}}/>
+                <img src={listing.imgUrls[index]} alt='pictures'
+                 style={{
+                  
+                }}/>
               </div>
           ))}
       </Slider>
