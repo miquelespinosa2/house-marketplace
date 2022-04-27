@@ -49,8 +49,9 @@ function Listing() {
     <main>
       <Slider {...settings}>
           {listing.imgUrls.map((url, index) => (
-              <div key={index} className='center no-repeat' style={{backgroundSize: 'cover', width:'50%'}}>
-                <img src={listing.imgUrls[index]}  alt='pictures'/>
+              <div key={index} >
+                <img src={listing.imgUrls[index]} className='center no-repeat'  alt='pictures'
+                 style={{backgroundSize: 'cover', width:'100%', height: '100%'}}/>
               </div>
           ))}
       </Slider>
