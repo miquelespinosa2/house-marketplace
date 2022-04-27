@@ -26,7 +26,14 @@ function Profile() {
   const navigate = useNavigate()
 
    useEffect(() => {
+    const fetchUserListings = async () => {
+      const listingsRef = collection(db, 'listings')
 
+      const q = query(listingsRef, where('userRef', '==', auth.currentUser.uid),
+      orderBy('timestamp', 'desc')
+      )
+    }
+    fetchUserListings()
   }, [auth.currentUser.uid])
 
   const onLogout = () =>  {
