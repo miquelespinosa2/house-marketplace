@@ -44,6 +44,10 @@ function Swiper() {
     return <Spinner />
   }
 
+  if(listings.length === 0) {
+    return <></>
+  }
+
   const settings = {
     dots: true,
     infinite: true,
