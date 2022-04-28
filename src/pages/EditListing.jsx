@@ -57,7 +57,7 @@ function EditListing() {
 
   // Redirect if listing is not user's
   useEffect(() => {
-    if(listing && listing.userRef !== auth.currentUser.uid) {
+    if (listing && listing.userRef !== auth.currentUser.uid) {
       toast.error('You can not edit that listing')
       navigate('/')
     }
@@ -69,20 +69,20 @@ function EditListing() {
     const fetchListing = async () => {
       const docRef = doc(db, 'listings', params.listingId)
       const docSnap = await getDoc(docRef)
-      if(docSnap.exists()) {
-        setListing(docSnap.data)
-        setFormData({...docSnap.data(), address: docSnap.data().location})
+      if (docSnap.exists()) {
+        setListing(docSnap.data())
+        setFormData({ ...docSnap.data(), address: docSnap.data().location })
         setLoading(false)
       } else {
         navigate('/')
         toast.error('Listing does not exist')
       }
-
     }
+
     fetchListing()
   }, [params.listingId, navigate])
 
-  // this sets userRef to logged in user
+  // Sets userRef to logged in user
   useEffect(() => {
     if (isMounted) {
       onAuthStateChanged(auth, (user) => {
@@ -206,7 +206,7 @@ function EditListing() {
     delete formDataCopy.address
     !formDataCopy.offer && delete formDataCopy.discountedPrice
 
-    // Update Listing
+    // Update listing
     const docRef = doc(db, 'listings', params.listingId)
     await updateDoc(docRef, formDataCopy)
     setLoading(false)
