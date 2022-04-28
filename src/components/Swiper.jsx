@@ -40,12 +40,12 @@ function Swiper() {
     fetchListings()
   }, [])
 
-  if(loading) {
-    return <Spinner />
-  }
-
   if(listings.length === 0) {
     return <></>
+  }
+
+  if(loading) {
+    return <Spinner />
   }
 
   const settings = {
