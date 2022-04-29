@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import ReactDOM from 'react-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 import { getDoc, doc } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
@@ -37,26 +37,18 @@ function Listing() {
   if (loading) {
     return <Spinner />
   }
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
   return (
     <main>
-      <Slider {...settings}>
+      <Carousel>
           {listing.imgUrls.map((url, index) => (
               <div key={index} >
                 <img src={listing.imgUrls[index]} alt='pictures'
                  style={{
-                  
+
                 }}/>
               </div>
           ))}
-      </Slider>
+      </Carousel>
 
 
       <div

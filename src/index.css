@@ -819,13 +819,6 @@ button {
   opacity: 0.75;
 }
 
-.simple cite {
-  margin: 0 auto;
-}
-  .slick-track {
-    display:flex;
-  }
-
 .carousel {
-    height:inherit;
-  }
+  width: 20px;
+}
