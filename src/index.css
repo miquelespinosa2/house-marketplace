@@ -818,3 +818,13 @@ button {
   font-size: 0.8rem;
   opacity: 0.75;
 }
+
+.carousel-container {
+  position: relative;
+  max-width: 432px;
+  max-height: 289px;
+}
+.carousel .slide img {
+  height: 100%;
+  width: auto;
+}
