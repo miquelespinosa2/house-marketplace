@@ -1,6 +1,7 @@
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Link } from 'react-router-dom'
+import Swiper from '../components/Slider';
 import rentCategoryImage from '../assets/jpg/rentCategoryImage.jpg'
 import sellCategoryImage from '../assets/jpg/sellCategoryImage.jpg'
 
