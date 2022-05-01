@@ -48,7 +48,7 @@ function Swiper() {
     <>
 
       <p className="exploreHeading">Recommended</p>
-
+    <Carousel>
         {listings.map(({data, id}) => (
           <div key={id}>
             <img src={data.imgUrls[0]} alt="images" onClick={() => navigate(`/category/${data.type}/${id}`)} id='carrImage'/>
@@ -57,6 +57,7 @@ function Swiper() {
             {data.type === 'rent' && '/ month'}</p>
           </div>
         ))}
+      </Carousel>
     </>
   )
 
